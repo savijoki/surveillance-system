@@ -3,6 +3,7 @@
 
 import argparse
 import json
+import sys
 
 import cloud_integration
 
@@ -12,16 +13,26 @@ def readConf():
     ap.add_argument("-c", "--conf", required=True, help="path to the JSON"
         "configuration file")
     args = vars(ap.parse_args())
+    conf = {}
 
     # Load the configuration
-    conf = json.load(open(args["conf"]))
+    try:
+        conf = json.load(open(args["conf"]))
+    except IOError, error:
+        print "[ERROR] Configuration file not found!"
+        return None
 	
     return conf
 
 
 def run():
-    conf = readConf()
 
+    conf = readConf()
+    
+    if not conf:
+        sys.exit(0)
+
+    print "[INFO] Starting cloud integration..."
     dropbox_client = cloud_integration.connectDropbox(conf)
 
 
