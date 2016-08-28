@@ -6,6 +6,7 @@ import json
 import sys
 
 import cloud_integration
+import motion
 
 def readConf():
     # Construct the argument parser and parse the arguments
@@ -34,8 +35,13 @@ def run():
 
     print "[INFO] Starting cloud integration..."
     dropbox_client = cloud_integration.connectDropbox(conf)
-
-
+    
+    print "[INFO] Checking media directory path..."
+    media_dir = motion.motionDirectory(conf)
+    
+    if not media_dir:
+        sys.exit(0)
+    
 
 if __name__ == '__main__':
     run()
