@@ -4,6 +4,8 @@
 import argparse
 import json
 
+import cloud_integration
+
 def readConf():
     # Construct the argument parser and parse the arguments
     ap = argparse.ArgumentParser()
@@ -18,7 +20,10 @@ def readConf():
 
 
 def run():
-    readConf()
+    conf = readConf()
+
+    dropbox_client = cloud_integration.connectDropbox(conf)
+
 
 
 if __name__ == '__main__':
