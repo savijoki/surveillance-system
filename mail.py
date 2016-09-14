@@ -14,7 +14,7 @@ class MailHandler:
 
     def __init__(self, recipient):
         
-        self.username, self.password = self.login_info(True)
+        self.username, self.password = self.login_info()
         self.recipient = recipient
         self.server_type = self.smtp_server_type()
         self.server = None

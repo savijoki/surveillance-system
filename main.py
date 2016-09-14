@@ -41,7 +41,7 @@ def main():
         sys.exit(0)
 
     print("[INFO] Starting cloud integration...")
-    dropbox_client = cloud_integration.connectDropbox(conf)
+    # dropbox_client = cloud_integration.connectDropbox(conf)
     print("[INFO] Checking media directory path...")
     media_dir = motion.motionDirectory(conf)
 
@@ -51,10 +51,12 @@ def main():
     # Emails are handled in MailHandler-class
     mailer = MailHandler(conf["send_mail_to"])
     mailer.validate_login()
+    
     print("[INFO] Starting motion...")
     time.sleep(2)
     # Starting the process
-    # start = subprocess.call(['sudo', 'service', 'motion', 'start'])
+    start = subprocess.call(['sudo', 'service', 'motion', 'start'])
+    
     # Set the watchdog to track directory's events
     event_handler = DirectoryEvents(media_dir, mailer)
     observer = Observer()
@@ -69,7 +71,7 @@ def main():
         print("\n[INFO] Closing program...")
 
         # Close motion and watchdog
-        # motion = subprocess.call(['sudo', 'service', 'motion', 'stop'])
+        motion = subprocess.call(['sudo', 'service', 'motion', 'stop'])
         observer.stop()
        
         if mailer.server:
