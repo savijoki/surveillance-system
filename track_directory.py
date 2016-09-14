@@ -8,7 +8,7 @@ from watchdog.events import PatternMatchingEventHandler
 class DirectoryEvents:
 
     def __init__(self, path, mailer):
-        
+
         self.path = path
         self.event_handler = PatternMatchingEventHandler(
             patterns=["*.jpg", "*.avi"])
@@ -17,7 +17,7 @@ class DirectoryEvents:
 
     def dispatch(self, event):
         self.process(event)
-    
+
     def process(self, event):
 
         mailer = self.mailer

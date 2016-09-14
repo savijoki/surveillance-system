@@ -8,7 +8,8 @@ from dropbox.client import DropboxClient
 
 def connectDropbox(conf):
 
-    # If dropbox_key is not set, stop program and give informative print to user
+    # If dropbox_key is not set, stop program and give informative print to
+    # user
     if conf["dropbox_key"] != "APP_KEY" or conf["dropbox_secret"] != "SECRET":
         # connect to dropbox and start the session authorization process
         print "[INFO] Start authorizing application from Dropbox..."

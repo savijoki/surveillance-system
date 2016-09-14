@@ -10,10 +10,11 @@ from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 
+
 class MailHandler:
 
     def __init__(self, recipient):
-        
+
         self.username, self.password = self.login_info()
         self.recipient = recipient
         self.server_type = self.smtp_server_type()
@@ -30,8 +31,7 @@ class MailHandler:
                 use_email = raw_input(
                     "Do you wish to use email notifications? [Y/n]").strip()
             if notifications or use_email == '' or use_email.lower() == 'y':
-                print(
-                    "[INFO] Using email notifications. Supported servers are outlook and gmail.")
+                print("[INFO] Using email notifications.")
                 email_user = raw_input("Enter username: ").strip()
                 email_pwd = getpass.getpass(prompt='Enter password: ')
                 break
@@ -41,7 +41,6 @@ class MailHandler:
                 print("Please respond with 'y' or 'n'.")
 
         return email_user, email_pwd
-
 
     # Define what smtp-server to use (outlook or gmail)
     def smtp_server_type(self):
@@ -100,12 +99,6 @@ class MailHandler:
 
         return server
 
-    # # Shutdown smtp server
-    # def shutdown(self):
-
-    #     self.server.quit()
-    #     self.server = None
-
     # Construct email message
     def construct_message(self, path):
 
@@ -125,7 +118,6 @@ class MailHandler:
         msg.attach(image)
         msg['Subject'] = 'Activity in security camera!'
         return msg
-
 
     # Send email to user, path gives the path to attachment (photo)
     def send_mail(self, path):

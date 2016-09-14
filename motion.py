@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# Check if media directory is set
 def motionDirectory(conf):
 
     media_dir = None
