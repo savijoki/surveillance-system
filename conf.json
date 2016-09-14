@@ -2,5 +2,6 @@
 	"dropbox_key": "APP_KEY",
 	"dropbox_secret": "SECRET",
 	"dropbox_app_name": "APP-NAME",
-	"motion_media_dir": "PATH_TO_DIR"
+	"motion_media_dir": "PATH_TO_DIR",
+    "send_mail_to": "RECIPIENT_MAIL"
 }
