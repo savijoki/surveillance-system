@@ -12,9 +12,9 @@ This project was designed to be used with Raspberry Pi that has a webcamera or c
 ## Preparations
 
 * Install motion with e.g apt-get (might need sudo depending of user rights)
- *`apt-get install motion`
+ * `apt-get install motion`
 * Install missing packets from requirements.txt
- *`pip install -r requirements.txt`
+ * `pip install -r requirements.txt`
 * Insert info (Dropbox API key + secret etc, email recipient...) to conf.json
 
 
