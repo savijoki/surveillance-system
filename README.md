@@ -25,4 +25,8 @@ This project was designed to be used with Raspberry Pi that has a webcamera or c
 
 ## TODO
 
-* Google Drive integration
+* Other cloud services 
+ * Google Drive (PyDrive)
+ * AWS
+ * Box
+
