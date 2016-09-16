@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Check if media directory is set
-def motionDirectory(conf):
+def motion_directory(conf):
 
     media_dir = None
 

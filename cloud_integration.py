@@ -6,7 +6,7 @@ from dropbox.client import DropboxOAuth2FlowNoRedirect
 from dropbox.client import DropboxClient
 
 
-def connectDropbox(conf):
+def connect_dropbox(conf):
 
     # If dropbox_key is not set, stop program and give informative print to
     # user

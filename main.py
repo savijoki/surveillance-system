@@ -14,7 +14,7 @@ import motion
 
 
 # Read the configuration file
-def readConf():
+def get_conf():
 
     # Construct the argument parser and parse the arguments
     ap = argparse.ArgumentParser()
@@ -35,15 +35,15 @@ def readConf():
 
 def main():
 
-    conf = readConf()
+    conf = get_conf()
 
     if not conf:
         sys.exit(0)
 
     print("[INFO] Starting cloud integration...")
-    dropbox_client = cloud_integration.connectDropbox(conf)
+    dropbox_client = cloud_integration.connect_dropbox(conf)
     print("[INFO] Checking media directory path...")
-    media_dir = motion.motionDirectory(conf)
+    media_dir = motion.motion_directory(conf)
 
     if not media_dir:
         sys.exit(0)
