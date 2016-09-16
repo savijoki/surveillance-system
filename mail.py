@@ -63,6 +63,7 @@ class MailHandler:
     def validate_login(self):
 
         server_type = self.server_type
+        valid_smtp_server = None
 
         while server_type:
 
