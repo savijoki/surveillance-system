@@ -1,7 +1,7 @@
 argh==0.26.2
 dropbox==6.7.0
 pathtools==0.1.2
-PyYAML==3.11
+PyYAML==5.4
 requests==2.11.1
 six==1.10.0
 typing==3.5.2.2
